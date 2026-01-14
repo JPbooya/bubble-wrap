@@ -8,7 +8,7 @@ int main() {
 while(true) {
   if (bn::keypad::a_pressed()) {
    // bn::core::init();
-    bn::backdrop::set_color(bn::color(15, 29, 15));
+    bn::backdrop::set_color(bn::color(31, 21, 22));
   }
 
   if (bn::keypad::b_pressed()) {
