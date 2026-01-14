@@ -4,20 +4,20 @@
 #include <bn_keypad.h>
 
 int main() {
-
+bn::core::init();
 while(true) {
   if (bn::keypad::a_pressed()) {
-   // bn::core::init();
-    bn::backdrop::set_color(bn::color(31, 21, 22));
+   
+    bn::backdrop::set_color(bn::color(10, 10, 22));
   }
-
+  // a_held();
   if (bn::keypad::b_pressed()) {
-    bn::backdrop::set_color(bn::color(20, 25, 31 ));
+    bn::backdrop::set_color(bn::color(28, 30, 31 ));
   }
 
-  else {
-    bn::backdrop::set_color(bn::color(31, 22, 22));
-  }
+  // else {
+  //   bn::backdrop::set_color(bn::color(31, 22, 22));
+  // }
 
     bn::core::update(); 
 
