@@ -15,6 +15,10 @@ while(true) {
     bn::backdrop::set_color(bn::color(20, 25, 31 ));
   }
 
+  else {
+    bn::backdrop::set_color(bn::color(31, 22, 22));
+  }
+
     bn::core::update(); 
 
   }
