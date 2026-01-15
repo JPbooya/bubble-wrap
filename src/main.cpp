@@ -27,6 +27,10 @@ while(true) {
      bn::backdrop::set_color(bn::color(31, 22, 22)); // Defualt color
   }
 
+  if (bn::keypad::a_pressed() && bn::keypad::b_pressed()) {
+    bn::backdrop::set_color(bn::color(12, 22, 30));
+  }
+
     bn::core::update(); 
   }
 } 
