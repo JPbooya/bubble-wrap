@@ -2,35 +2,45 @@
 #include <bn_color.h>
 #include <bn_core.h>
 #include <bn_keypad.h>
+#include <bn_sprite_ptr.h>
+#include <bn_sprite_items_dot.h>
 
 int main() {
-bn::core::init();
 
-int counter = 0; // initialize counter 
+  bn::core::init();
 
-while(true) {
-  if (bn::keypad::a_held()) {
-    bn::backdrop::set_color(bn::color(10, 10, 22));
-    counter = 60;
-  }
+  bn::sprite_ptr myCircle = bn::sprite_items::dot.create_sprite(0, 0);
+  bn::sprite_ptr myCircle2 = bn::sprite_items::dot.create_sprite(0, -20);
+  bn::sprite_ptr myCircle3 = bn::sprite_items::dot.create_sprite(0, 20);
+  bn::sprite_ptr myCircle4 = bn::sprite_items::dot.create_sprite(-20, 0);
+  bn::sprite_ptr myCircle5 = bn::sprite_items::dot.create_sprite(20, 0);
+
+
+  int counter = 0; // initialize counter 
+
+  while(true) {
+    if (bn::keypad::a_held()) {
+      bn::backdrop::set_color(bn::color(10, 10, 22));
+      counter = 60;
+    }
   
-  else if (bn::keypad::b_held()) {
-    bn::backdrop::set_color(bn::color(28, 30, 31 ));
-    counter = 60;
-  }
+    else if (bn::keypad::b_held()) {
+      bn::backdrop::set_color(bn::color(28, 30, 31 ));
+      counter = 60;
+    }
 
-  if (counter > 0) {
-    counter = counter -1; // Count down
-  }
+    if (counter > 0) {
+      counter = counter -1; // Count down
+    }
 
-  if (counter == 0) {
-     bn::backdrop::set_color(bn::color(31, 22, 22)); // Defualt color
-  }
+    if (counter == 0) {
+      bn::backdrop::set_color(bn::color(31, 22, 22)); // Defualt color
+    }
 
-  if (bn::keypad::a_pressed() && bn::keypad::b_pressed()) {
-    bn::backdrop::set_color(bn::color(12, 22, 30));
-  }
+    if (bn::keypad::a_pressed() && bn::keypad::b_pressed()) {
+      bn::backdrop::set_color(bn::color(5, 22, 5));
+    }
 
-    bn::core::update(); 
+      bn::core::update(); 
   }
 } 
