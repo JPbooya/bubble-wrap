@@ -27,10 +27,12 @@ int main() {
   // bn::sprite_ptr myCircle8 = bn::sprite_items::dot.create_sprite(30, 40);
   // bn::sprite_ptr myCircle9 = bn::sprite_items::dot.create_sprite(40, 40);
 
-  bn::vector<bn::sprite_ptr, 10 > circles = {};
+  bn::vector<bn::sprite_ptr, 21 > circles = {};
 
-  for(int x = -40; x <= 40; x += 10) {
+  for(int x = -100; x <= 90; x += 10 ) {
     BN_LOG("x value", x);
+
+    // circles.push_back(bn::sprite_items::dot.create_sprite(x, 40));
     bn::sprite_ptr myCircle = bn::sprite_items::dot.create_sprite(x, 40);
     circles.push_back(myCircle);
   }
