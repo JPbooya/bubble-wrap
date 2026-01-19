@@ -29,11 +29,11 @@ int main() {
 
   bn::vector<bn::sprite_ptr, 21 > circles = {};
 
-  for(int x = -100; x <= 90; x += 10 ) {
-    BN_LOG("x value", x);
+  for(int y = -100; y <= 90; y += 10 ) {
+    BN_LOG("x value", y);
 
     // circles.push_back(bn::sprite_items::dot.create_sprite(x, 40));
-    bn::sprite_ptr myCircle = bn::sprite_items::dot.create_sprite(x, 40);
+    bn::sprite_ptr myCircle = bn::sprite_items::dot.create_sprite(0, y);
     circles.push_back(myCircle);
   }
 
