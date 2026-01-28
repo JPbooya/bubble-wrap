@@ -27,9 +27,9 @@ int main() {
   // bn::sprite_ptr myCircle8 = bn::sprite_items::dot.create_sprite(30, 40);
   // bn::sprite_ptr myCircle9 = bn::sprite_items::dot.create_sprite(40, 40);
 
-  bn::vector<bn::sprite_ptr, 100 > circles = {};
+  bn::vector<bn::sprite_ptr, 15 > circles = {};
 
-  for(int y = -100; y <= 90; y += 10 ) {
+  for(int y = -15; y <= 10; y += 5 ) {
     BN_LOG("x value", y);
 
     // circles.push_back(bn::sprite_items::dot.create_sprite(x, 40));
@@ -37,29 +37,38 @@ int main() {
     circles.push_back(myCircle);
   }
 
-  for(int y = -100; y <= 90; y += 10 ) {
-    BN_LOG("x value", y);
-
-    // circles.push_back(bn::sprite_items::dot.create_sprite(x, 40));
-    bn::sprite_ptr myCircle = bn::sprite_items::dot.create_sprite(20, y);
-    circles.push_back(myCircle);
+  for(int i = 0; i < circles.size(); i++) {
+    circles[i].set_scale(0.1);
   }
 
-  for(int x = -100; x <= 90; x += 10 ) {
-    BN_LOG("x value", x);
+  // for(int y = -100; y <= 90; y += 10 ) {
+  //   BN_LOG("x value", y);
 
-    // circles.push_back(bn::sprite_items::dot.create_sprite(x, 40));
-    bn::sprite_ptr myCircle = bn::sprite_items::dot.create_sprite(x, 20);
-    circles.push_back(myCircle);
-  }
+  //   // circles.push_back(bn::sprite_items::dot.create_sprite(x, 40));
+  //   bn::sprite_ptr myCircle = bn::sprite_items::dot.create_sprite(20, y);
+  //   circles.push_back(myCircle);
+  // }
 
-  for(int x = -100; x <= 90; x += 10 ) {
-    BN_LOG("x value", x);
+  // for(int x = -100; x <= 90; x += 10 ) {
+  //   BN_LOG("x value", x);
 
-    // circles.push_back(bn::sprite_items::dot.create_sprite(x, 40));
-    bn::sprite_ptr myCircle = bn::sprite_items::dot.create_sprite(x, 30);
-    circles.push_back(myCircle);
-  }
+  //   // circles.push_back(bn::sprite_items::dot.create_sprite(x, 40));
+  //   bn::sprite_ptr myCircle = bn::sprite_items::dot.create_sprite(x, 20);
+  //   circles.push_back(myCircle);
+  // }
+
+  // for(int x = -100; x <= 90; x += 10 ) {
+  //   BN_LOG("x value", x);
+
+  //   // circles.push_back(bn::sprite_items::dot.create_sprite(x, 40));
+  //   bn::sprite_ptr myCircle = bn::sprite_items::dot.create_sprite(x, 30);
+  //   circles.push_back(myCircle);
+  // }
+
+  // circles[0].set_scale(1.0);
+  // circles[1].set_vertical_scale(0.1);
+  // circles[2].set_scale(0.3);
+  // circles[3].set_scale(0.1);
 
 
   int counter = 0; // initialize counter 
