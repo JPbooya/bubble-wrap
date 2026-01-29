@@ -27,18 +27,24 @@ int main() {
   // bn::sprite_ptr myCircle8 = bn::sprite_items::dot.create_sprite(30, 40);
   // bn::sprite_ptr myCircle9 = bn::sprite_items::dot.create_sprite(40, 40);
 
-  bn::vector<bn::sprite_ptr, 15 > circles = {};
+  bn::vector<bn::sprite_ptr, 35 > circles = {};
 
-  for(int y = -15; y <= 10; y += 5 ) {
-    BN_LOG("x value", y);
+  for(int x = -100; x <= 100; x += 7 ) {
 
-    // circles.push_back(bn::sprite_items::dot.create_sprite(x, 40));
-    bn::sprite_ptr myCircle = bn::sprite_items::dot.create_sprite(0, y);
+    BN_LOG("x value", x);
+
+    bn::sprite_ptr myCircle = bn::sprite_items::dot.create_sprite(x, 0);
     circles.push_back(myCircle);
   }
 
   for(int i = 0; i < circles.size(); i++) {
-    circles[i].set_scale(0.1);
+
+    if(i % 2 == 0) {
+      circles[i].set_scale(1.0);
+    } else {
+      circles[i].set_shear(0.5);
+    }
+
   }
 
   // for(int y = -100; y <= 90; y += 10 ) {
